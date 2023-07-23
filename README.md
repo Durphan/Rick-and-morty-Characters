@@ -6,3 +6,6 @@ Material UI
 Typescript
 React
 Context
+React Router
+Yup
+Axios
