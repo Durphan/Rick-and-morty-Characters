@@ -1,9 +1,10 @@
 import * as React from "react"
-import { Notification } from "../pages/login/components";
+import { Notification } from "../components/notifications";
 import { AlertColor } from "@mui/material";
 
 type ContextProps = {
     getError:(msg:string) => void
+    getSuccess:(msg:string) => void
 
 }
 
@@ -26,13 +27,25 @@ export const NotificationProvider:React.FC<{children:React.JSX.Element}> = ({chi
         setSeverity("error")
     }
 
+    const getSuccess = (msg:string) =>{
+        setOpen(true)
+        setMessage(msg)
+        setSeverity("success")
+    }
+
+
     const value = {
-        getError
+        getError,
+        getSuccess
     }
 
     return(
         <NotificationContext.Provider value={value}>
-            <Notification handleClose={handleClose} open={open} severity={severity} message={message}/>
+            <Notification 
+            handleClose={handleClose} 
+            open={open} 
+            severity={severity} 
+            message={message}/>
                 {children}
         </NotificationContext.Provider>
     )

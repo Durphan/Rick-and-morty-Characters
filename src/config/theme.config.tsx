@@ -10,7 +10,9 @@ export enum themePallete {
     main="#DDE6ED",
     FONT_GLOBAL="`Roboto`",
     ERROR_MAIN ="#f44336",
-    BG_ERROR_MAIN = "rgba(244,67,54,0,1)"
+    BG_ERROR_MAIN = "rgba(244,67,54,0,1)",
+    SUCCESS_MAIN = "#66bb6a",
+    BG_SUCCESS_MAIN="rgba(102,187,106,8,1)"
 }
 
 const Theme = createTheme({
@@ -37,7 +39,7 @@ const Theme = createTheme({
                 }
             }
         },
-       MuiAlert:{
+    MuiAlert:{
         defaultProps:{
             style:{
                 borderRadius:"0.8em",
@@ -49,8 +51,12 @@ const Theme = createTheme({
                 border:`1px solid ${themePallete.ERROR_MAIN}`,
                 background:`${themePallete.BG_ERROR_MAIN}`
             },
+            standardSuccess:{
+                border:`1px solid ${themePallete.SUCCESS_MAIN}`,
+                background:`${themePallete.BG_SUCCESS_MAIN}`
+            }
         },
-       },
+    },
     },
 });
 

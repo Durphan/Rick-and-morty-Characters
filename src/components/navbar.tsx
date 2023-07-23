@@ -1,10 +1,19 @@
 import { AppBar, Box, Container, Toolbar, Grid, Button, Typography, Stack } from "@mui/material";
-import * as React from "react";
+import { useNavigate } from "react-router-dom";
 
-export const Navbar: React.FC<{}> = () => {
+type NavbarProps = {
+  nameButtonA:String
+  navigateButtonA:String
+  nameButtonB:String
+
+}
+
+
+export const Navbar:React.FC<NavbarProps> = ({nameButtonA, nameButtonB, navigateButtonA}) => {
+  const Navigate = useNavigate()
     return(
         <Box sx={{ flexGrow:1 }}>
-            <AppBar position="fixed">
+            <AppBar position="sticky">
                 <Toolbar>
                     <Container>
                         <Grid 
@@ -16,8 +25,8 @@ export const Navbar: React.FC<{}> = () => {
                           </Grid>
                           <Grid item>
                             <Stack direction="row" spacing={2}>
-                          <Button variant="outlined">Login</Button>
-                          <Button variant="contained">Register</Button>
+                          <Button variant="outlined"  onClick={()=> Navigate(`${navigateButtonA}`)}>{nameButtonA}</Button>
+                          <Button variant="contained">{nameButtonB}</Button>
                             </Stack>
                           </Grid>
                         </Grid>

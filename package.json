@@ -1,5 +1,5 @@
 {
-  "name": "portafolio",
+  "name": "practice-mui-tsx",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,9 +14,11 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.7",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1"
+    "react-router-dom": "^6.14.1",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

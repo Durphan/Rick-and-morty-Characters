@@ -1,13 +1,11 @@
-
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import { AppRouter } from './router/router'
-import * as React from 'react'
 import { NotificationProvider } from './context/notification.context'
 
 
 
-export const App: React.FC<{}> = () => {
+export const App = () => {
   return (
     <NotificationProvider>
   <BrowserRouter>
@@ -15,7 +13,6 @@ export const App: React.FC<{}> = () => {
   </BrowserRouter>
   </NotificationProvider>
   )
- 
 }
 
 export default App

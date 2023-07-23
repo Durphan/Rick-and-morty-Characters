@@ -13,8 +13,8 @@ export const Notification:React.FC<NotificationProps> = ({open, message, severit
 
 
   return (
-   <Snackbar anchorOrigin={{vertical:"top", horizontal:"center"}} autoHideDuration={4000} open={open} onClose={handleClose}>
+  <Snackbar anchorOrigin={{vertical:"top", horizontal:"center"}} autoHideDuration={4000} open={open} onClose={handleClose}>
     <Alert onClose={handleClose} severity={severity}><Typography>{message}</Typography></Alert>
-   </Snackbar>
+  </Snackbar>
   )
   }
