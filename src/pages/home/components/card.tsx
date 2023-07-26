@@ -14,8 +14,9 @@ export const CardComponent:React.FC<CardProps> = ({image, name, species, status}
             <CardMedia 
             component="img"
             height="194"
+            width="200"
             image={image}
-            alt="Ola mundo"/>
+            alt={name}/>
             <CardContent>
                 <Typography variant="h4" sx={{mb:2}}>{name}</Typography>
                 <Divider/>

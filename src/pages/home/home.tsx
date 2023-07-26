@@ -1,6 +1,6 @@
 import { ThemeConfig } from "../../config/theme.config"
 import { Navbar } from "../../components/navbar"
-import { Button, Container, Grid } from "@mui/material"
+import {Box, Button, CircularProgress, Container, Grid, Pagination, Stack } from "@mui/material"
 import { HeaderComponent } from "./components/header"
 import * as React from "react"
 import { Characters } from "./services/characters"
@@ -11,16 +11,24 @@ import { TypeCharacter } from "./interface/character.interface"
 
 export const Home = () => {
   const [allCharacters, setAllCharacters] = React.useState<TypeCharacter[] | null>([])
+  const [loading, setLoading] = React.useState<boolean>(true)
+  const [pages, setPages] = React.useState<number>(1)
+  const [count, setCount] = React.useState<number>(1)
 
     React.useEffect(() =>{
-      Characters.getAll({page: 1}).then((r)=>{
+      setLoading(true)
+      Characters.getAll({page:pages}).then((r)=>{
+        setCount(r.data.info.pages)
         setAllCharacters(r.data.results)
+        setTimeout(() => setLoading(false), 1000)
       }).catch((e) =>{
         console.error(e)
       })
-  }, [])
+  }, [pages])
 
-
+const handleChange = (_event: React.ChangeEvent<unknown>, value:number) =>{
+  setPages(value)
+}
 
 
   return (
@@ -31,28 +39,37 @@ export const Home = () => {
           maxWidth="xl" 
           sx={{ mt:9 }}>
             <HeaderComponent 
-            title="Hola mundo" 
-            description="Hola mundo descripcion"
+            title="Hello World" 
+            description="Description"
             element={<Button fullWidth variant="contained">Hola mundo</Button>}/>
           </Container>
           <div>
             {
+              loading ? (
+                <Box sx={{display:"flex", justifyContent:"center", mt:"4"}}>
+                  <CircularProgress/>
+                </Box>
+              ) : (
+            
               allCharacters?.length!==0 ? (
-                <Grid container spacing={2} justifyContent="center" alignItems="center">
-                  {allCharacters!.map((character) => (
-                    <Grid item>
+                <Grid sx={{my:2}} container spacing={3} justifyContent="center" alignItems="center">
+                {allCharacters!.map((character) => (
+                  <Grid item key={character.id}>
                     <CardComponent 
-                    key={character.id}
                     image={character.image} 
                     name={character.name} 
                     species={character.species}
                     status={character.status}/>
                     </Grid>
-                  ))}
+                  ))} 
                 </Grid>
-              ) :" "
-            }
+              ) : ("No data")
+              )}
           </div>
+          <Stack justifyContent="center" alignItems="center">
+
+            <Pagination count={count} page={pages} onChange={handleChange} />
+          </Stack>
           </ThemeConfig>
       </div> )  
 }
