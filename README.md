@@ -9,3 +9,7 @@ Context
 React Router
 Yup
 Axios
+
+This webpage displays in screen every character of the Rick And Morty series
+
+You can select someone and look at more basic information.
