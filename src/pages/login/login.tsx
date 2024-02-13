@@ -42,7 +42,7 @@ export const Login = () => {
         <div>
             <ThemeConfig>
         <Container>
-        <Navbar nameButtonA={"Home"} navigateButtonA={"/"} nameButtonB={"Register"}/>
+        <Navbar nameButtonA={"Home"} navigateButtonA={"/"}/>
             <Grid
                 container direction="column"
                 alignItems={"center"}

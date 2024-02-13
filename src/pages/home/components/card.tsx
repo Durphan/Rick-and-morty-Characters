@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Divider, Typography } from "@mui/material"
-import {BadgeCharacter} from "./badge"
+import {BadgeCharacter} from "./chipCharacter"
 
 type CardProps = {
     image:string,

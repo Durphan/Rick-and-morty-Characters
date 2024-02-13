@@ -1,6 +1,6 @@
 import { ThemeConfig } from "../../config/theme.config"
 import { Navbar } from "../../components/navbar"
-import {Box, Button, CircularProgress, Container, Grid, Pagination, Stack } from "@mui/material"
+import {Box, CircularProgress, Container, Grid, Pagination, Stack } from "@mui/material"
 import { HeaderComponent } from "./components/header"
 import * as React from "react"
 import { Characters } from "./services/characters"
