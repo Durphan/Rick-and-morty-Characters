@@ -25,12 +25,12 @@ export const HeaderComponent:React.FC<HeaderProps> = ({title, description, eleme
             alignItems="center"
             >
                 <Grid item>
-                    <Typography variant="h1">
+                    <Typography variant="h1" component={`span`}>
                         {title}
                     </Typography>
                 </Grid>
                 <Grid item sx={{mt:2}}>
-                    <Typography>
+                    <Typography component={`span`}>
                         {description}
                     </Typography>
                 </Grid>

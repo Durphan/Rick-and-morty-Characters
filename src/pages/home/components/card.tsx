@@ -1,4 +1,5 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Divider, Typography } from "@mui/material"
+import {BadgeCharacter} from "./badge"
 
 type CardProps = {
     image:string,
@@ -20,8 +21,8 @@ export const CardComponent:React.FC<CardProps> = ({image, name, species, status}
             <CardContent>
                 <Typography variant="h4" sx={{mb:2}}>{name}</Typography>
                 <Divider/>
-                <Typography sx={{mt:2}}>Especie:{species}</Typography>
-                <Typography sx={{mt:2}}>Estado:{status}</Typography>
+                <Typography sx={{mt:2}}>Specie:{species}</Typography>
+                <Typography sx={{mt:2}}>Status:<BadgeCharacter status={status}></BadgeCharacter></Typography>
                 <CardActions>
                     <Button variant="contained" size="small" fullWidth>Learn More</Button>
                 </CardActions>

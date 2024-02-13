@@ -4,12 +4,11 @@ import { useNavigate } from "react-router-dom";
 type NavbarProps = {
   nameButtonA:String
   navigateButtonA:String
-  nameButtonB:String
 
 }
 
 
-export const Navbar:React.FC<NavbarProps> = ({nameButtonA, nameButtonB, navigateButtonA}) => {
+export const Navbar:React.FC<NavbarProps> = ({nameButtonA, navigateButtonA}) => {
   const Navigate = useNavigate()
     return(
         <Box sx={{ flexGrow:1 }}>
@@ -26,7 +25,6 @@ export const Navbar:React.FC<NavbarProps> = ({nameButtonA, nameButtonB, navigate
                           <Grid item>
                             <Stack direction="row" spacing={2}>
                           <Button variant="outlined"  onClick={()=> Navigate(`${navigateButtonA}`)}>{nameButtonA}</Button>
-                          <Button variant="contained">{nameButtonB}</Button>
                             </Stack>
                           </Grid>
                         </Grid>

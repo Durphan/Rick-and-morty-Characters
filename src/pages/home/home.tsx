@@ -34,14 +34,13 @@ const handleChange = (_event: React.ChangeEvent<unknown>, value:number) =>{
   return (
       <div>
         <ThemeConfig>
-            <Navbar nameButtonA={"Login"} navigateButtonA={"/login"} nameButtonB={"Register"} />
+            <Navbar nameButtonA={"Login"} navigateButtonA={"/login"} />
           <Container 
           maxWidth="xl" 
           sx={{ mt:9 }}>
-            <HeaderComponent 
-            title="Hello World" 
-            description="Description"
-            element={<Button fullWidth variant="contained">Hola mundo</Button>}/>
+            <HeaderComponent
+            title="Rick and Morty Characters" 
+            description="It's a webpage to test Axios, using Rick and Morty API"/>
           </Container>
           <div>
             {
