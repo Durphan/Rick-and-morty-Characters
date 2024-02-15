@@ -1,4 +1,4 @@
-This repository is a practice on how to use Material UI and ReactTS, so I can go here if I need to remember something.
+This repository is a practice of how to use Material UI and ReactTS, so I can go here if I need to remember something.
 
 Technologies (for the moment) :
 
