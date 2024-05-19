@@ -1,9 +1,10 @@
-import { AppBar, Box, Container, Toolbar, Grid, Button, Typography, Stack } from "@mui/material";
+import { AppBar, Box, Container, Toolbar, Grid, Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+
 type NavbarProps = {
-  nameButtonA:String
-  navigateButtonA:String
+  nameButtonA:string
+  navigateButtonA:string
 
 }
 
@@ -20,7 +21,7 @@ export const Navbar:React.FC<NavbarProps> = ({nameButtonA, navigateButtonA}) => 
                         justifyContent={"space-between"}
                         alignItems="center">
                           <Grid item>
-                          <Typography color="primary">Durpha</Typography>
+                          <img src={"/EDLogo.svg"} alt="Esteban Durante" width={25} height={25}/>
                           </Grid>
                           <Grid item>
                             <Stack direction="row" spacing={2}>

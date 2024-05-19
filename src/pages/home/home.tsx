@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { ThemeConfig } from "../../config/theme.config"
 import { Navbar } from "../../components/navbar"
 import {Box, CircularProgress, Container, Grid, Pagination, Stack } from "@mui/material"
@@ -35,11 +36,9 @@ const handleChange = (_event: React.ChangeEvent<unknown>, value:number) =>{
       <div>
         <ThemeConfig>
             <Navbar nameButtonA={"Login"} navigateButtonA={"/login"} />
-          <Container 
-          maxWidth="xl" 
-          sx={{ mt:9 }}>
+          <Container >
             <HeaderComponent
-            title="Rick and Morty Characters" 
+            title="REST API test" 
             description="It's a webpage to test Axios, using Rick and Morty API"/>
           </Container>
           <div>

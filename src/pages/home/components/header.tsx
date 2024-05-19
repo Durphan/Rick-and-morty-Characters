@@ -1,8 +1,8 @@
 import { Box, Grid, Typography, Divider } from "@mui/material"
 
 type HeaderProps = {
-    title:String,
-    description:String,
+    title:string,
+    description:string,
     element?:React.ReactNode | null
 }
 
@@ -11,13 +11,6 @@ export const HeaderComponent:React.FC<HeaderProps> = ({title, description, eleme
         <div>
         <Box
         sx={{ width:"100%", mb:"25px" }}>
-            <Grid 
-            container 
-            direction="row" 
-            justifyContent="center" 
-            alignItems="center">
-                <Grid item xs={5}></Grid>
-                </Grid>
                 <Grid 
             container 
             direction="column" 
