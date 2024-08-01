@@ -1,6 +1,6 @@
-This repository is a practice of how to use Material UI and ReactTS, so I can go here if I need to remember something.
+This repository is a practice of how to use Axios with React and Material UI.
 
-Technologies (for the moment) :
+Technologies:
 
 Material UI
 Typescript
